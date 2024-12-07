@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости</title>
+</head>
+<body>
+    <h1>Список новостей</h1>
+    {% for item in news %}
+        <h2>{{ item.title }}</h2>
+        <p><strong>Автор:</strong> {{ item.author }}</p>
+        <p><strong>Дата публикации:</strong> {{ item.pub_date }}</p>
+        <p><strong>Краткое описание:</strong> {{ item.short_description }}</p>
+        <p>{{ item.text }}</p>
+        <hr>
+    {% empty %}
+        <p>Новостей пока нет.</p>
+    {% endfor %}
+</body>
+</html>
